@@ -3,11 +3,9 @@ $(function() {
     url : 'ajax/content.html', // La ressource ciblée
     type : 'GET', // Le type de la requête HTTP
     success:function(html){
-      console.log(html);
       $('#img1').html(html);
     },
     error:function(response){
-      console.log('error')
 
     }
   });
@@ -17,11 +15,9 @@ $(function() {
       url : 'ajax/delay5.html', // La ressource ciblée
       type : 'GET', // Le type de la requête HTTP
       success:function(html){
-        console.log(html);
         $('#img2').html(html);
       },
       error:function(response){
-        console.log('error')
 
       }
     });}
@@ -31,18 +27,16 @@ $(function() {
       url : 'ajax/info.html', // La ressource ciblée
       type : 'GET', // Le type de la requête HTTP
       success:function(html){
-        console.log(html);
         $('#bt3').click(function(){
           $('#img3').html(html);
         });
       },
       error:function(response){
-        console.log('error')
 
       }
     });
 
-    //
+
 
 
     $('#formulaire').submit(function(e){
@@ -61,17 +55,63 @@ $(function() {
         method:"POST", //First change type to method here
         data: data,
         success:function(res) {
-           $('#user').html(res);
-         },
-         error:function(){
+          $('#user').html(res);
+        },
+        error:function(){
           alert("error post");
-         }
+        }
 
       });
 
     })
 
-
     //
+
+
+
+
+
+
+
+
+
+    var h = parseInt($('#h').text());
+    var m = parseInt($('#m').text());
+    var s = parseInt($('#s').text());
+    //Ajout 1 seconde
+    s = s+1;
+    console.log(s)
+    if(s>59) {
+      s=0;
+      m=m+1;
+    }
+
+    if(m>59){
+      m=0;
+      h=h+1;
+    }
+
+    if(h>23){
+      h=0;
+    }
+
+    if(h<10){
+      h='0'+h;
+    }
+
+    if(m<10){
+      m='0'+m;
+    }
+
+    if(s<10){
+      s='0'+s;
+    }
+
+    $('#h1').html(h);
+    $('#m1').html(m);
+    $('#s1').html(s);
+
+
+
 
   });

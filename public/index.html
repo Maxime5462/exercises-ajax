@@ -64,11 +64,11 @@
             <div class="bg-light p-2 rounded">
               <h3>Heure</h3>
               <div class="time">
-                <div class="units" data-hours></div>
+                <div class="units" data-hours id="h"></div>
                 <div class="separator">:</div>
-                <div class="units" data-minutes></div>
+                <div class="units" data-minutes id="m"></div>
                 <div class="separator">:</div>
-                <div class="units" data-secondes></div>
+                <div class="units" data-secondes id="s"></div>
               </div>
             </div>
           </div>
@@ -76,11 +76,11 @@
             <div class="bg-light p-2 rounded">
               <h3>Heure dans une seconde</h3>
               <div class="time">
-                <div class="units"></div>
+                <div class="units" data-hours id="h1"></div>
                 <div class="separator">:</div>
-                <div class="units"></div>
+                <div class="units" data-minutes id="m1"></div>
                 <div class="separator">:</div>
-                <div class="units"></div>
+                <div class="units" data-secondes id="s1"></div>
               </div>
             </div>
           </div>
@@ -120,6 +120,9 @@
       document.querySelector('[data-hours]').textContent = hours < 10 ? '0' + hours : hours
       document.querySelector('[data-minutes]').textContent = minutes < 10 ? '0' + minutes : minutes
       document.querySelector('[data-secondes]').textContent = secondes < 10 ? '0' + secondes : secondes
+
+
+
     </script>
   </body>
 </html>

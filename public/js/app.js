@@ -65,16 +65,7 @@ $(function() {
 
     })
 
-    //
-
-
-
-
-
-
-
-
-
+        
     var h = parseInt($('#h').text());
     var m = parseInt($('#m').text());
     var s = parseInt($('#s').text());
@@ -110,8 +101,5 @@ $(function() {
     $('#h1').html(h);
     $('#m1').html(m);
     $('#s1').html(s);
-
-
-
 
   });
